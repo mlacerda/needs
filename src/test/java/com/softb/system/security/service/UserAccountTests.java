@@ -14,6 +14,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.social.connect.ConnectionData;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.softb.system.config.ServiceConfig;
@@ -22,6 +23,7 @@ import com.softb.system.security.repository.UserAccountRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {ServiceConfig.class})
+@DirtiesContext(classMode= DirtiesContext.ClassMode.AFTER_CLASS)
 public class UserAccountTests {
 
     @Autowired

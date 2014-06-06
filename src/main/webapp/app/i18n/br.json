@@ -1,6 +1,7 @@
 {
     "global": {
         "title": "Needs - Sua Plataforma de Colaboracao",
+        "search": "Pesquisar pessoas",        
         "menu": {
             "home": "Principal",
             "about": "Sobre",
@@ -26,6 +27,9 @@
             "en": "Inglês"
         }
     },
+    "home": {
+    	"message": "Usuário não autenticado. Autentique-se para ter acesso as funcionalidades do sistema!!!!" 
+    },    
     "logs": {
         "title": "Logs",
         "nbloggers": "Existem {{ total }} contextos de log.",

@@ -29,6 +29,8 @@
 	</properties>	
 	
 	<dependencies>	
+		<!-- Mail dependencias -->
+		
 		<!-- Metrics dependencias -->
         <dependency>
             <groupId>com.codahale.metrics</groupId>

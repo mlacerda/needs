@@ -47,5 +47,4 @@ public class LoggerViewTests {
         actions.andExpect(content().contentType("application/json"));
         actions.andExpect(status().isOk());
     }
-    
 }
