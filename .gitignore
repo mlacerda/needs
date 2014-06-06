@@ -1,0 +1,10 @@
+.DS_Store
+/target
+/.classpath
+/.project
+/target
+target/*
+.bower-cache/*
+.bower-registry/*
+.settings/*
+src/main/webapp/resources/lib

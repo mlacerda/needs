@@ -1,0 +1,62 @@
+server:
+    port: 8080
+    contextPath: /needs
+    tomcat:
+        access_log_enabled: true
+        basedir: target/tomcat
+
+spring:
+    application:
+        name: needs
+
+    datasource:
+        driverClassName: org.hsqldb.jdbcDriver
+        url: jdbc:hsqldb:mem:petclinic
+        username: sa
+        password:
+
+    jpa:
+        database: HSQL
+        openInView: true
+        show_sql: true
+        generate-ddl: false
+        hibernate:
+            ddl-auto: false
+        properties:
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+
+    messageSource:
+        cacheSeconds: 1    
+
+metrics:
+    jmx.enabled: true
+    elasticsearch:
+        enabled: false
+        host: localhost
+        port: 9200
+
+cache:
+    timeToLiveSeconds: 3600
+    ehcache:
+        maxBytesLocalHeap: 16M
+
+application:
+    social:
+        google:
+            clientId: 165599166804.apps.googleusercontent.com
+            clientSecret: Hz5jm-5zcTwfOAdt6Ajq-Ril
+    security: 
+        secureChannel: http
+        key: needs
+
+swagger:
+    apiDocsLocation: http://localhost:8080
+    title: Needs API
+    description: Matching your Needs!
+    termsOfServiceUrl: https://github.com/marcuslacerda/needs/blob/master/readme.md
+    contact:
+    license: Apache 2.0
+    licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html        

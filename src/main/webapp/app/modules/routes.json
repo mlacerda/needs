@@ -1,0 +1,59 @@
+[
+    {
+        "id": "dashboard", 
+		"name":"Dashboard", 
+		"icon": "icon-custom-home",
+		"originalPath": "/dashboard", 	
+		"templateUrl": "modules/dashboard/views/dashboard.html",
+		"dependencies": ["modules/dashboard/controllers/index"]
+
+    },
+    {	
+		"id": "rebanho",
+		"name":"Rebanho", 
+		"icon": "icon-custom-thumb",
+		"hasSubMenu": true,
+        "items" : [
+        	{
+	    	"id": 31,
+			"name": "Cadastro de Animais",
+			"originalPath": "/rebanho/animal/search", 		
+			"templateUrl": "modules/rebanho/views/animal/animal-search.html",
+			"visible": true,
+			"dependencies": ["modules/rebanho/controllers/animal-controller", "layout-form"]
+	        },
+	        {
+	    	"id": 32,
+	    	"name": "Cadastro de Grupos",
+			"originalPath": "/rebanho/grupo/edit", 		
+			"templateUrl": "modules/rebanho/views/grupo/grupo-inline.html",
+			"visible": true ,
+			"dependencies": ["modules/rebanho/controllers/grupo-controller"]
+	        },
+			{
+	    	"id": 33,
+			"name": "Configuracao de Grupos",
+			"originalPath": "/rebanho/grupo/configuracao", 		
+			"templateUrl": "modules/rebanho/views/grupo/configuracao.html",
+			"visible": true,
+			"dependencies": ["modules/rebanho/controllers/agrupamento-controller", "layout-form"]
+	        }      
+        ]
+	},
+	{	
+		"id": "diariobordo",
+		"name":"Diário de Bordo", 
+		"icon": "icon-custom-thumb",
+		"hasSubMenu": true,
+        "items" : [
+        	{
+	    	"id": 51,
+			"name": "Registrar Evento",
+			"originalPath": "/diariobordo/evento/novo", 		
+			"templateUrl": "modules/diariobordo/views/evento/evento-wizard-1.html",
+			"visible": true,
+			"dependencies": ["modules/diariobordo/controllers/evento-controller", "layout-form"]
+	        }      
+        ]
+	}
+]
