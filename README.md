@@ -56,3 +56,6 @@ bower: npm install -g bower
      |____ bower.json
      |____ readme.md
      |____ pom.xml
+
+### Build do projeto
+Utiliza o travis para build continua do projeto. Link da última build pode ser visto no link https://travis-ci.org/mlacerda/needs
