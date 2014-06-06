@@ -2,8 +2,13 @@
 
 Versão básica para stack full client js (angular/require) c/ Spring MVC.
 
+## Roadmap
+
+![Image of Yaktocat](https://docs.google.com/drawings/d/1y_tJIqpOHXN4SxYFf3vYWggj_td6lhPqaJmu6b1J2Yk/pub?w=495&h=379)
+  
+
 ## Arquitetura
-  TODO: colocar uma imagem com visao geral das tecnologias aqui...
+TODO: ???
 
 ## Desenvolvimento
 
@@ -11,11 +16,12 @@ Versão básica para stack full client js (angular/require) c/ Spring MVC.
 ### Prerequisites para ambiente de desenvolvimento
 As seguintes ferramentas precisam estar instalada para o correto funcionando do ambiente de desenvolvimento
 ```
-1. Java 7: apt-get install openjdk7
-2. Maven 3: apt-get install maven
-3. git: apt-get install git
-4. npm: apt-get install npm 
-5. bower: npm install -g bower 
+Eclipse
+Java 7: apt-get install openjdk7
+Maven 3: apt-get install maven
+git: apt-get install git
+npm: apt-get install npm 
+bower: npm install -g bower 
 ```
 
 ## Executando a aplicação
