@@ -1,6 +1,7 @@
 {
     "global": {
         "title": "Needs Colaboration",
+        "search": "Search People",
         "menu": {
             "home": "Home",
             "about": "About",
@@ -25,6 +26,9 @@
             "br": "Brazil",
             "en": "English"
         }
+    },
+    "home": {
+    	"message": "You aren't logged. You must authenticate to access the business functionalities" 
     },
     "logs": {
         "title": "Logs",

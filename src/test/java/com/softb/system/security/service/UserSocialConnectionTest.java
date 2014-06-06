@@ -24,7 +24,6 @@ import com.softb.system.security.repository.UserSocialConnectionRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ServiceConfig.class)
-
 public class UserSocialConnectionTest {
 
     @Autowired
@@ -32,44 +31,32 @@ public class UserSocialConnectionTest {
 
 
     private void setupUserSocialConnectionList(){
-        UserSocialConnection userSocialConnection = new UserSocialConnection
-                ("jiwhiz", "google", "google-jiwhiz", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        UserSocialConnection userSocialConnection = new UserSocialConnection ("jiwhiz", "google", "google-jiwhiz", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
         userSocialConnectionRepository.save(userSocialConnection);
-        userSocialConnection = new UserSocialConnection
-                ("jiwhiz2", "google", "google-jiwhiz2", 2, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        userSocialConnection = new UserSocialConnection ("jiwhiz2", "google", "google-jiwhiz2", 2, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
         userSocialConnectionRepository.save(userSocialConnection);
         
-        userSocialConnection = new UserSocialConnection
-                ("jiwhiz", "facebook", "facebook-jiwhiz", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        userSocialConnection = new UserSocialConnection("jiwhiz", "facebook", "facebook-jiwhiz", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
         userSocialConnectionRepository.save(userSocialConnection);
-        userSocialConnection = new UserSocialConnection
-                ("jiwhiz2", "facebook", "facebook-jiwhiz2", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        userSocialConnection = new UserSocialConnection("jiwhiz2", "facebook", "facebook-jiwhiz2", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
         userSocialConnectionRepository.save(userSocialConnection);
 
-        userSocialConnection = new UserSocialConnection
-                ("jiwhiz", "twitter", "twitter-jiwhiz", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        userSocialConnection = new UserSocialConnection("jiwhiz", "twitter", "twitter-jiwhiz", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
         userSocialConnectionRepository.save(userSocialConnection);
-        userSocialConnection = new UserSocialConnection
-                ("jiwhiz2", "twitter", "twitter-jiwhiz2", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        userSocialConnection = new UserSocialConnection("jiwhiz2", "twitter", "twitter-jiwhiz2", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
         userSocialConnectionRepository.save(userSocialConnection);
 
-        userSocialConnection = new UserSocialConnection
-                ("other", "facebook", "facebook-other", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        userSocialConnection = new UserSocialConnection("other", "facebook", "facebook-other", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
         userSocialConnectionRepository.save(userSocialConnection);
-        userSocialConnection = new UserSocialConnection
-                ("other", "twitter", "twitter-other", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        userSocialConnection = new UserSocialConnection("other", "twitter", "twitter-other", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
         userSocialConnectionRepository.save(userSocialConnection);
-
     }
     
-    // -------------------------------------------------------------------------
-
     @Test
     @Transactional
     public void testUserSocialConnectionCRUD() {
         // create user connection
-        UserSocialConnection userSocialConnection = new UserSocialConnection
-                ("jiwhiz", "google", "google-jiwhz", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
+        UserSocialConnection userSocialConnection = new UserSocialConnection("jiwhiz", "google", "google-jiwhz", 1, "Yuan", "http://", "http://", "token", "secret", "token", 1000000l);
 
         userSocialConnectionRepository.save(userSocialConnection);
         Integer key = userSocialConnection.getId();
@@ -140,7 +127,6 @@ public class UserSocialConnectionTest {
         
         List<UserSocialConnection> result = userSocialConnectionRepository.findByProviderIdAndProviderUserIdIn("google", providerUserIds);
         assertEquals(2, result.size());
-
     }
 
 }
