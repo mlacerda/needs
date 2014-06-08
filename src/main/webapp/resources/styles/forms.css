@@ -29,11 +29,6 @@ a.sb.github,
 	margin-top: 10px;
 }
 
-a.sb.facebook,
-.sb a.facebook {
-	background-image: url(../images/facebook.png);
-}
-
 a.sb.no-shadow,
 .sb.no-shadow a {
 	-webkit-box-shadow: none;
@@ -77,6 +72,29 @@ a.sb,
     -o-transition:background-color 0.5s,border-color 0.3s;
 	
 }
+
+.manage-data-toolbar {
+	cursor:pointer;
+	bottom:5px;
+}
+
+td .manage-data-toolbar {
+	visibility:hidden;
+}
+
+td:hover .manage-data-toolbar {
+	visibility: visible;
+}
+
+
+dl .manage-data-toolbar {
+	visibility:hidden;
+}
+
+dl:hover .manage-data-toolbar {
+	visibility: visible;
+}
+
 
 .form-group{
 	margin-bottom:20px;

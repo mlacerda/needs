@@ -5,5 +5,6 @@ define([
     './mg-grid',
     './mg-message-box',
     './mg-validation-alert',
-    './mg-active-language'
+    './mg-active-language',
+    './mg-member-info'
 ]);

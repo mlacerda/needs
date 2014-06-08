@@ -1,11 +1,9 @@
+<link href="resources/styles/forms.css" rel="stylesheet" type="text/css"/>
 
 <section ng-controller="ManageUserController">
-<div class="post">
-	<h2>
-		List All Users ({{users.length}}):
-	</h2>
+<div class="content">
 
-	<!-- Pagination TODO -->
+	<mg-content-header business-component='Admin' story-name='User List'></mg-content-header>
 
 	<table class="table table-striped table-bordered bootstrap-datatable">
 		<thead>
@@ -29,24 +27,17 @@
 				<td>
 					<table class="member-info">
 						<tr ng-show="user.socialConnections['google']">
-							<td><i class="sb no-shadow googleplus"></i></td>
+							<td><a rel="tooltip" title="Google+" class="sb no-shadow googleplus"></a></td>
 							<td><a href="{{user.socialConnections['google'].profileUrl}}" 
 								   title="{{user.socialConnections['google'].displayName}}" target="_blank">
 									<img ng-src="{{user.socialConnections['google'].imageUrl}}" class="dashboard-member-activity-avatar" />
 							</a></td>
 						</tr>
-						<tr ng-show="user.socialConnections['twitter']">
-							<td><i class="icon-twitter"></i></td>
-							<td><a href="{{user.socialConnections['twitter'].profileUrl}}"
-								   title="{{user.socialConnections['twitter'].displayName}}" target="_blank"> 
-									<img ng-src="{{user.socialConnections['twitter'].imageUrl}}" class="dashboard-member-activity-avatar" />
-							</a></td>
-						</tr>
-						<tr ng-show="user.socialConnections['facebook']">
-							<td><i class="icon-facebook"></i></td>
-							<td><a href="{{user.socialConnections['facebook'].profileUrl}}"
-								   title="{{user.socialConnections['facebook'].displayName}}" target="_blank">
-									<img ng-src="{{user.socialConnections['facebook'].imageUrl}}" class="dashboard-member-activity-avatar" />
+						<tr ng-show="user.socialConnections['github']">
+							<td><a rel="tooltip" title="Google+" class="sb no-shadow github"></a></td>
+							<td><a href="{{user.socialConnections['github'].profileUrl}}"
+								   title="{{user.socialConnections['github'].displayName}}" target="_blank">
+									<img ng-src="{{user.socialConnections['github'].imageUrl}}" class="dashboard-member-activity-avatar" />
 							</a></td>
 						</tr>
 					</table>
@@ -56,10 +47,10 @@
 				<td>{{user.accountLocked}}
 					<div class="manage-data-toolbar">
 						<span ng-show="user.accountLocked">
-							<a ng-click="unlock(user)"> <i class="icon-ok" title="Unlock User"></i> Unlock</a>
+							<a ng-click="unlock(user)"> <i class="fa fa-exchange" title="Unlock User"></i> Unlock</a>
 						</span>
 						<span ng-show="!user.accountLocked">
-							<a ng-click="lock(user)"> <i class="icon-lock" title="Lock User"></i> Lock</a>
+							<a ng-click="lock(user)"> <i class="fa fa-exchange" title="Lock User"></i> Lock</a>
 						</span>
 					</div>
 				</td>
@@ -68,10 +59,10 @@
 				<td>{{user.trustedAccount}}
 					<div class="manage-data-toolbar">
 						<span ng-show="user.trustedAccount">
-							<a ng-click="untrust(user)"> <i class="icon-question-sign" title="UnTrust User"></i> Untrust</a>
+							<a ng-click="untrust(user)"> <i class="fa fa-question" title="UnTrust User"></i> Untrust</a>
 						</span>
 						<span ng-show="!user.trustedAccount">
-							<a ng-click="trust(user)"> <i class="icon-ok-sign" title="Trust User"></i> Trust</a>
+							<a ng-click="trust(user)"> <i class="fa fa-sign-in" title="Trust User"></i> Trust</a>
 						</span>
 					</div>
 				</td>
@@ -84,8 +75,6 @@
 			</tr>
 		</tbody>
 	</table>
-
-	<!-- Pagination TODO -->
 
 </div>
 </section>
