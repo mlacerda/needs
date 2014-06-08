@@ -27,21 +27,31 @@ public class ConnectionSignUpImpl implements ConnectionSignUp {
     }
     
     public String execute(Connection<?> connection) {
-        ConnectionData data = connection.createData();
-        UserAccount account = this.userAccountService.createUserAccount(builderUserAccount(data));
+        UserAccount account = this.userAccountService.createUserAccount(builderUserAccount(connection));
         
         if (logger.isDebugEnabled()) {
+        	ConnectionData data = connection.createData();
             logger.debug("Automatically create a new user account '"+account.getUserId()+"', for "+account.getDisplayName());
             logger.debug("connection data is from provider '"+data.getProviderId()+"', providerUserId is '"+data.getProviderUserId());
         }
         return account.getUserId();
     }
     
-    public UserAccount builderUserAccount(ConnectionData data) {
+    public UserAccount builderUserAccount(Connection<?> connection) {
+    	ConnectionData data = connection.createData();
+
     	UserAccount account = new UserAccount();
-    	
     	account.setDisplayName(data.getDisplayName());
     	account.setImageUrl(data.getImageUrl());
+
+    	// teste acessando dados da API Git
+//    	if ( "github".equals(data.getProviderId()) ) {
+//            Map<String, ?> user = ((org.springframework.social.github.api.GitHub)connection.getApi()).restOperations().getForObject("https://api.github.com/user", java.util.Map.class);
+//        	account.setDisplayName(data.getDisplayName());
+//        	String avatarUrl = (String) user.get("avatar_url");
+//        	account.setImageUrl(avatarUrl);
+//
+//    	}
     	
     	return account;
     }

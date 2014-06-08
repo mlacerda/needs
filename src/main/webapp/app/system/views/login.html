@@ -1,10 +1,11 @@
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link href="resources/lib/hint.css/hint.min.css" rel="stylesheet" type="text/css" />
 <link href="resources/styles/forms.css" rel="stylesheet" type="text/css" />
+<link href="resources/styles/login.css" rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL STYLESE -->
 
 <section ng-controller="AuthController">
-	<link href="resources/styles/login.css" rel="stylesheet" type="text/css" />
+
 
 	<div class="content error-body no-top">
 		<!-- Display messagens from error-handler.js -->
@@ -23,6 +24,12 @@
 							<i class="fa fa-google-plus"></i>
 						</div>
 						<span class="bold">Entrar com Google</span>
+					</button>
+					<button class="btn btn-block btn-github col-md-8" type="button" ng-click="go('signin/github')">
+						<div class="pull-left">
+							<i class="fa fa-github"></i>
+						</div>
+						<span class="bold">Entrar com GitHub</span>
 					</button>
 				</div>
 				<div class="col-md-5 ">

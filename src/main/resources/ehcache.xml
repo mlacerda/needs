@@ -17,10 +17,10 @@
             overflowToDisk="false"
             />
 
-    <cache name="com.softb.system.security.model.UserAccount"
+	<cache name="com.softb.system.security.model.UserAccount"
            timeToLiveSeconds="3600">
     </cache>
-    
+<!--         
     <cache name="com.softb.modules.rebanho.model.Grupo"
            timeToLiveSeconds="3600">
     </cache>
@@ -31,7 +31,7 @@
 
     <cache name="com.softb.modules.diariobordo.model.Evento"
            timeToLiveSeconds="3600">
-    </cache>        
+    </cache>        --> 
 
 </ehcache>
 

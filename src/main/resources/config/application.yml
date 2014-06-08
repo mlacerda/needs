@@ -46,8 +46,11 @@ cache:
 application:
     social:
         google:
-            clientId: 165599166804.apps.googleusercontent.com
-            clientSecret: Hz5jm-5zcTwfOAdt6Ajq-Ril
+            clientId: "165599166804.apps.googleusercontent.com"
+            clientSecret: "Hz5jm-5zcTwfOAdt6Ajq-Ril"
+        github:
+            clientIddd: "507678491e1920512104"
+            clientSecret: "e9600534084fe630fa0d632dca63a89b84187612"
     security: 
         secureChannel: http
         key: needs

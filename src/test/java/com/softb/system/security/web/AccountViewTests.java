@@ -26,8 +26,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.softb.system.Application;
-import com.softb.system.security.web.resource.UserResource;
 import com.softb.system.security.web.resource.RegisterResource;
+import com.softb.system.security.web.resource.UserResource;
 import com.softb.system.web.config.WebMvcConfig;
 
 

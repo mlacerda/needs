@@ -1,11 +1,16 @@
 package com.softb.system.metrics.config;
 
+import java.io.IOException;
 import java.lang.management.ManagementFactory;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
+import org.elasticsearch.metrics.ElasticsearchReporter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
@@ -76,4 +81,52 @@ public class MetricsConfig extends MetricsConfigurerAdapter implements Environme
             jmxReporter.start();
         }
     }
+    
+	@Configuration
+	@ConditionalOnClass(ElasticsearchReporter.class)
+	public static class GraphiteRegistry implements EnvironmentAware {
+		
+		private static final String ENV_METRICS_REPORTER = "metrics.elasticsearch.";
+		private static final String PROP_REPORTER_ENABLED = "enabled";
+		private static final String PROP_PORT = "port";
+		private static final String PROP_HOST = "host";
+
+
+		private final Logger logger = LoggerFactory.getLogger(GraphiteRegistry.class);
+
+		@Inject
+		private MetricRegistry metricRegistry;
+
+		private RelaxedPropertyResolver propertyResolver;
+		private Environment env;
+
+		@Override
+		public void setEnvironment(Environment environment) {
+			this.env = environment;
+			this.propertyResolver = new RelaxedPropertyResolver(environment, ENV_METRICS_REPORTER);
+		}
+
+		@PostConstruct
+		private void init() {
+			Boolean reporterEnabled = propertyResolver.getProperty(PROP_REPORTER_ENABLED, Boolean.class, false);
+			if (reporterEnabled) {
+				logger.info("Initializing Metrics Graphite reporting");
+				ElasticsearchReporter reporter;
+				try {
+					String host = propertyResolver.getProperty(PROP_HOST);
+					String port = propertyResolver.getProperty(PROP_PORT);
+					reporter = ElasticsearchReporter.forRegistry(metricRegistry)
+							.hosts(String.format("%s:%s", host, port))
+							.convertRatesTo(TimeUnit.SECONDS)
+							.convertDurationsTo(TimeUnit.MILLISECONDS)
+							.build();
+					reporter.start(60, TimeUnit.SECONDS);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+	}
+    
 }

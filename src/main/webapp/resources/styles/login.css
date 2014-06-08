@@ -13,6 +13,21 @@
 	cursor: hand;
 }
 
+.btn-github {
+	background-color: #99c;
+	color: white;
+	/*display: inline-block;
+		
+	width: 165px; 
+	border-radius: 5px;
+	white-space: nowrap;*/
+}
+
+.btn-github:hover, .btn-gplus:focus, .btn-gplus:active, .btn-gplus.active, .btn-gplus.disabled, .btn-gplus[disabled] {
+	background-color: #99c;
+	cursor: hand;
+}
+
 span.label {
 	font-weight: bold;
 }

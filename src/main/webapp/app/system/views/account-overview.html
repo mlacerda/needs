@@ -102,7 +102,7 @@
 	</div>
 
 	<hr />
-	<h2>Integração Google</h2>
+	<h2>Providers</h2>
 	<div class="alert alert-error" ng-show="duplicateConnectionError">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
 		<p>You have other account that already connected to it!</p>
@@ -135,9 +135,30 @@
 								</button>
 							</div>
 						</div>
-
 					</td>
 				</tr>
+				<tr>
+					<td><a rel="tooltip" title="GitHub" class="sb no-shadow github"></a></td>
+					<td>
+						<div ng-show="!myAccount.socialConnections['github']">
+							<form action="connect/github" method="POST">
+								<button type="submit" class="btn">
+									<i class="icon-github"></i> Connect with GibHub
+								</button>
+							</form>
+						</div>
+						<div ng-show="myAccount.socialConnections['github']">
+							<a href="{{myAccount.socialConnections['github'].profileUrl}}" target="_blank"> <img ng-src="{{myAccount.socialConnections['github'].imageUrl}}"
+								class="img dashboard-member-activity-avatar" /> {{myAccount.socialConnections['github'].displayName}}
+							</a>
+							<div class="comment-toolbar">
+								<button ng-click="useSocialImage('github')">
+									<i class="icon-github-sign"></i> Use GibHub Image
+								</button>
+							</div>
+						</div>
+					</td>
+				</tr>				
 			</tbody>
 		</table>
 	</div>

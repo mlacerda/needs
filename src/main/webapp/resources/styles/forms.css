@@ -17,17 +17,21 @@ img.dashboard-member-activity-avatar {
 
 a.sb.googleplus,
 .sb a.googleplus {
-	background-image: url(../img/googleplus.png);
+	background-image: url(../images/googleplus.png);
+	background-color: antiquewhite;
+	margin-top: 10px;
 }
 
-a.sb.twitter,
-.sb a.twitter {
-	background-image: url(../img/twitter_bird.png);
+a.sb.github,
+.sb a.github {
+	background-image: url(../images/github.png);
+	background-color: antiquewhite;
+	margin-top: 10px;
 }
 
 a.sb.facebook,
 .sb a.facebook {
-	background-image: url(../img/facebook.png);
+	background-image: url(../images/facebook.png);
 }
 
 a.sb.no-shadow,

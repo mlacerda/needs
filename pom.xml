@@ -18,6 +18,7 @@
 	<properties>
 		<start-class>com.softb.modules.Application</start-class>
 		<spring-framework.version>4.0.2.RELEASE</spring-framework.version>
+		<!-- TODO [marcus] revisar versao do spring-social para 1.0.0.M4 -->
 		<spring-social.version>1.1.0.BUILD-SNAPSHOT</spring-social.version>
 		<spring-social-google.version>1.0.0.M3</spring-social-google.version>
 		
@@ -70,7 +71,12 @@
             <groupId>com.ryantenney.metrics</groupId>
             <artifactId>metrics-spring</artifactId>
             <version>${metrics-spring.version}</version>
-        </dependency>   
+        </dependency>
+		<dependency>
+		  <groupId>org.elasticsearch</groupId>
+		  <artifactId>metrics-elasticsearch-reporter</artifactId>
+		  <version>2.0</version>
+		</dependency>         
         <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -82,7 +88,6 @@
 		 </dependency>	
 		 -->        
              
-		
 		<!-- Liquibase dependencias -->
         <dependency>
             <groupId>org.liquibase</groupId>
@@ -174,6 +179,12 @@
 		
 
 		<!--========== Spring Social Web + Google ==========-->
+		
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-github</artifactId>
+			<version>1.0.0.BUILD-SNAPSHOT</version>
+		</dependency>		
 		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-web</artifactId>
